@@ -1,12 +1,13 @@
 import React from "react";
-import { AiOutlineHome,AiOutlineSearch,AiOutlinePlayCircle ,AiTwotoneHeart} from "react-icons/ai";
-import {HiLibrary} from 'react-icons/hi' ;
+import { AiOutlineHome,AiOutlineSearch ,AiTwotoneHeart} from "react-icons/ai";
+import {VscLibrary} from 'react-icons/vsc' ;
 import {GrSpotify} from 'react-icons/gr' ;
-
+import {BsPlusSquareFill} from 'react-icons/bs' ;
+import {BiHeartSquare} from 'react-icons/bi' ;
 
 function SideBar() {
   return (
-    <div className="w-44 bg-black text-white h-screen">
+    <div className="w-80 bg-black text-white h-screen">
          <div className="flex item-center p-2 mb-8 mt-4" >
         <GrSpotify size={40} />
         <h1 className="pl-2 font-bold text-2xl text-gray-400">Spotify</h1>
@@ -20,15 +21,15 @@ function SideBar() {
         <h1 className="pl-1 font-semibold text-gray-400">Search</h1>
       </div>
       <div className="flex item-center p-2">
-        <HiLibrary size={20} />
+        <VscLibrary size={20} />
         <h1 className="pl-2 font-semibold text-gray-400">Your Library</h1>
       </div>
       <div className="flex item-center p-2 mt-4">
-        <AiOutlinePlayCircle size={20} />
+        <BsPlusSquareFill size={20} className='text-gray-400'/>
         <h1 className="pl-2 font-semibold text-gray-400">Created Playlist</h1>
       </div>
       <div className="flex item-center p-2">
-        <AiTwotoneHeart size={20}  className='text-blue-500'/>
+        <BiHeartSquare size={20}  className='text-white bg-violet-500 '/>
         <h1 className="pl-2 font-semibold  text-gray-400">Liked Songs</h1>
       </div>
       <div className="flex item-center p-2">
