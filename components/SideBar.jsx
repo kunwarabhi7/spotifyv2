@@ -36,6 +36,7 @@ function SideBar() {
         <GrSpotify size={20} className='text-green-400' />
         <h1 className="pl-2 font-semibold text-gray-400">Your Episodes</h1>
       </div>
+      <hr className="mx-4 mt-4" />
     </div>
   );
 }
