@@ -7,6 +7,10 @@ import {GrSpotify} from 'react-icons/gr' ;
 function SideBar() {
   return (
     <div className="w-44 bg-black text-white h-screen">
+         <div className="flex item-center p-2 mb-8 mt-4" >
+        <GrSpotify size={40} />
+        <h1 className="pl-2 font-bold text-2xl text-gray-400">Spotify</h1>
+      </div>
       <div className="flex item-center p-2">
         <AiOutlineHome size={20} />
         <h1 className="pl-2 font-semibold text-gray-400">Home</h1>
