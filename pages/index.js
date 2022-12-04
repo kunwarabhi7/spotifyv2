@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='flex'>
+      <div className='flex overflow-hidden h-screen'>
       <SideBar />
       <MainBar />
       </div>
