@@ -11,7 +11,7 @@ const login = ({providers}) => {
     </div>
       <hr className='text-black my-16 bg-black  text-4xl'/>
 {Object.values(providers).map((provider)=>(
-  <div key={provider.name} className='text-center text-4xl'>
+  <div key={provider.name} className='text-center text-4xl mt-48'>
    <button className='text-green-400'> Login With {provider.name}</button>
     </div>
 ))}
