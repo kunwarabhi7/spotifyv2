@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
 
 
 
@@ -7,9 +7,16 @@ import React from 'react'
 
 const MainBar = () => {
   return (
-    <div>
-      hey
-         </div>
+    <div className='w-full h-screen'>
+{/* Header */}
+<div className='bg-black h-[418px] text-white'>
+  <div className='flex p-6'>
+
+<AiOutlineLeft size={30} className='mr-4 rounded-full '/>
+<AiOutlineRight size={30} className='mr-4 rounded-full '/>
+  </div>
+</div>
+        </div>
   )
 }
 
