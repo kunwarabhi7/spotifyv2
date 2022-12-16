@@ -4,13 +4,18 @@ import {VscLibrary} from 'react-icons/vsc' ;
 import {GrSpotify} from 'react-icons/gr' ;
 import {BsPlusSquareFill} from 'react-icons/bs' ;
 import {BiHeartSquare} from 'react-icons/bi' ;
+import { signOut } from "next-auth/react";
 
 function SideBar() {
   return (
-    <div className="w-80 bg-black text-white h-screen ">
+    <div className="w-80 bg-black text-white h-screen overflow-y-scroll">
          <div className="flex item-center p-2 mb-8 mt-4 cursor-pointer" >
         <GrSpotify size={40} />
         <h1 className="pl-2 font-bold text-2xl text-white">Spotify</h1>
+      </div>
+      <div className="flex item-center p-2 text-gray-400  hover:text-white hover:cursor-pointer ">
+    
+        <h1 onClick={()=>signOut()}  className="pl-2 font-semibold  ">LogOut</h1>
       </div>
       <div className="flex item-center p-2 text-gray-400  hover:text-white hover:cursor-pointer ">
         <AiOutlineHome size={20}  />
