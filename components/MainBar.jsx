@@ -1,8 +1,11 @@
 import React from 'react'
+import {signOut} from 'next-auth/react'
 
 const MainBar = () => {
   return (
-    <div>MainBar</div>
+    <div>
+      <button onClick={()=>signOut()} className='bg-black text-white p-2 m-4'>LogOut</button>
+    </div>
   )
 }
 
