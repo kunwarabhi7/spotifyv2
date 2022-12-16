@@ -8,7 +8,7 @@ import { signOut } from "next-auth/react";
 
 function SideBar() {
   return (
-    <div className="w-80 bg-black text-white h-screen overflow-y-scroll">
+    <div className="w-80 bg-black text-white h-screen scrollbar-hide overflow-y-scroll">
          <div className="flex item-center p-2 mb-8 mt-4 cursor-pointer" >
         <GrSpotify size={40} />
         <h1 className="pl-2 font-bold text-2xl text-white">Spotify</h1>
