@@ -30,7 +30,7 @@ const MainBar = () => {
     </div>
   </div>
 </div>
-<h1 className='text-white -mt-80 ml-12 cursor-pointer hover:underline text-4xl'>Recently Played</h1>
+<h1 className='text-white -mt-80 ml-12 cursor-pointer hover:underline font-bold text-2xl'>Recently played</h1>
         </div>
   )
 }
