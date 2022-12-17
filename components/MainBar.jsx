@@ -23,10 +23,10 @@ const MainBar = () => {
       Upgrade
       </p>
       </div>
-    <div className='flex justify-center '>
-      <img className='rounded-full w-12 h-12 mr-2' src={session?.user?.image} />
-      <h1>{session?.user?.name}</h1>
-      <AiFillCaretDown size={25}/>
+    <div className='flex justify-center hover:opacity-80 '>
+      <img className='rounded-full w-12 h-12 mr-2 cursor-pointer' src={session?.user?.image} />
+      <h1 className='cursor-pointer'>{session?.user?.name}</h1>
+      <AiFillCaretDown className='cursor-pointer' size={25}/>
     </div>
   </div>
 </div>
