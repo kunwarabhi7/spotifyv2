@@ -1,12 +1,26 @@
-import React from "react";
-import { AiOutlineHome,AiOutlineSearch ,AiTwotoneHeart} from "react-icons/ai";
+import React, { useEffect, useState } from "react";
+import { AiOutlineHome,AiOutlineSearch } from "react-icons/ai";
 import {VscLibrary} from 'react-icons/vsc' ;
 import {GrSpotify} from 'react-icons/gr' ;
 import {BsPlusSquareFill} from 'react-icons/bs' ;
 import {BiHeartSquare} from 'react-icons/bi' ;
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
+import useSpotify from '../hooks/useSpotify'
+
 
 function SideBar() {
+  const spotifyApi = useSpotify();
+  const [playLists,setPlayLists]=useState([]);
+  const {data:session,status} = useSession();
+
+  useEffect(() => {
+    if(spotifyApi.getAccessToken()){
+      spotifyApi.getUserPlaylists().then((data)=>{
+        setPlayLists(data.body.items);
+      })
+    }
+  }, [session,spotifyApi])
+ 
   return (
     <div className="w-80 bg-black text-white h-screen scrollbar-hide overflow-y-scroll">
          <div className="flex item-center p-2 mb-8 mt-4 cursor-pointer" >
@@ -42,6 +56,12 @@ function SideBar() {
         <h1 className="pl-2 font-semibold ">Your Episodes</h1>
       </div>
       <hr className="mx-4 mt-4" />
+      {playLists.map((playlist)=>{
+        return (
+
+          <div key={playlist.id} className=" pl-2 font-semibold item-center p-2 text-gray-400  hover:text-white hover:cursor-pointer ">{playlist.name}</div>
+          )
+      })}
     </div>
   );
 }
