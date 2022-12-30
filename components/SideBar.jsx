@@ -56,6 +56,7 @@ function SideBar() {
         <h1 className="pl-2 font-semibold ">Your Episodes</h1>
       </div>
       <hr className="mx-4 mt-4" />
+      {/* playlist */}
       {playLists.map((playlist)=>{
         return (
 
