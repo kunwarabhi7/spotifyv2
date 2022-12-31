@@ -14,7 +14,7 @@ function SideBar() {
   const {data:session,status} = useSession();
   const [playlistId,setPlayListsId] = useState(null);
 
-  console.log('you picked', playlistId);
+  console.log('you picked this playlist', playlistId);
 
   useEffect(() => {
     if(spotifyApi.getAccessToken()){
@@ -63,7 +63,7 @@ function SideBar() {
       {playLists.map((playlist)=>{
         return (
 
-          <div onClick={()=>setPlayListsId(playList.id)} key={playlist.id} className=" pl-2 font-semibold item-center p-2 text-gray-400  hover:text-white hover:cursor-pointer ">{playlist.name}</div>
+          <div onClick={()=>setPlayListsId(playlist.id)} key={playlist.id} className=" pl-2 font-semibold item-center p-2 text-gray-400  hover:text-white hover:cursor-pointer ">{playlist.name}</div>
           )
       })}
     </div>
