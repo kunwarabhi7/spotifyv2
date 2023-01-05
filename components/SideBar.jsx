@@ -6,13 +6,15 @@ import {BsPlusSquareFill} from 'react-icons/bs' ;
 import {BiHeartSquare} from 'react-icons/bi' ;
 import { signOut, useSession } from "next-auth/react";
 import useSpotify from '../hooks/useSpotify'
+import { useRecoilState } from "recoil";
+import { playlistIdState } from "../atoms/playlistAtom";
 
 
 function SideBar() {
   const spotifyApi = useSpotify();
   const [playLists,setPlayLists]=useState([]);
   const {data:session,status} = useSession();
-  const [playlistId,setPlayListsId] = useState(null);
+  const [playlistId,setPlayListsId] = useRecoilState(playlistIdState);
 
   console.log('you picked this playlistt', playlistId);
 
