@@ -5,6 +5,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { playlistIdState, playlistState } from '../atoms/playlistAtom';
 import useSpotify from '../hooks/useSpotify';
 import spotifyApi from '../utils/spotify';
+import Songs from './Songs';
 
 
 
@@ -65,6 +66,7 @@ const MainBar = () => {
 </div>
 </div>
 </div>
+<Songs />
         </div>
   )
 }
