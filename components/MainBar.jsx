@@ -53,8 +53,17 @@ const MainBar = () => {
 <div className='flex'>
 
 <img src={playlist?.images[0]?.url} className='w-64 h-48 mt-12 ml-12' />
+<div>
+{/* Playlist */}
+
 <h1 className='text-white text-2xl mt-12 ml-8 '>Playlist</h1>
-<h1 className='text-white text-2xl mt-12 ml-8 '>{playlist?.name}</h1>
+<h1 className='text-white text-7xl mt-4 ml-4 '>{playlist?.name}</h1>
+{/* Author */}
+<div>
+<img src={playlist?.owner?.snapshot_id} className='h-4 w-8' alt="Image of playlist owner" />
+<h1 className='text-white'>{playlist?.owner.display_name}</h1>
+</div>
+</div>
 </div>
         </div>
   )
