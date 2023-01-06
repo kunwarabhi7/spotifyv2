@@ -1,12 +1,31 @@
 import {useSession} from 'next-auth/react'
+import { useEffect } from 'react';
 import {AiOutlineLeft,AiOutlineRight,AiFillCaretDown} from 'react-icons/ai'
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { playlistIdState, playlistState } from '../atoms/playlistAtom';
+import useSpotify from '../hooks/useSpotify';
+import spotifyApi from '../utils/spotify';
 
 
 
 
 
 const MainBar = () => {
+  const spotifyApi = useSpotify()
   const {data:session} = useSession();
+  const playlistId = useRecoilValue(playlistIdState);
+  const [playlist,setPlaylist] = useRecoilState(playlistState)
+
+  useEffect(()=>{
+    spotifyApi.getPlaylist(playlistId).then((data)=>{
+      setPlaylist(data.body)
+    }).catch((err)=>{
+      console.log('you have an error',err)
+    })
+
+  },[spotifyApi,playlistId])
+  console.log('your playlist is' ,playlist)
+
   return (
     <div className='w-full h-screen'>
 {/* Header */}
@@ -31,6 +50,12 @@ const MainBar = () => {
   </div>
 </div>
 <h1 className='text-white -mt-80 ml-12 cursor-pointer hover:underline font-bold text-2xl'>Recently played</h1>
+<div className='flex'>
+
+<img src={playlist?.images[0]?.url} className='w-64 h-48 mt-12 ml-12' />
+<h1 className='text-white text-2xl mt-12 ml-8 '>Playlist</h1>
+<h1 className='text-white text-2xl mt-12 ml-8 '>{playlist?.name}</h1>
+</div>
         </div>
   )
 }
