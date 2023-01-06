@@ -7,7 +7,7 @@ import {BiHeartSquare} from 'react-icons/bi' ;
 import { signOut, useSession } from "next-auth/react";
 import useSpotify from '../hooks/useSpotify'
 import { useRecoilState } from "recoil";
-import { playlistIdState } from "../atoms/playlistAtom";
+import { playlistIdState, playlistState } from "../atoms/playlistAtom";
 
 
 function SideBar() {
@@ -15,6 +15,7 @@ function SideBar() {
   const [playLists,setPlayLists]=useState([]);
   const {data:session,status} = useSession();
   const [playlistId,setPlayListsId] = useRecoilState(playlistIdState);
+  // const [playlist,setPlayLists] = useRecoilState(playlistState)
 
   console.log('you picked this playlistt', playlistId);
 
