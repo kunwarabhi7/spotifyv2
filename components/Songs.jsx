@@ -17,10 +17,10 @@ const Songs = () => {
     </div>
         <h1 className="text-white bg-black">
 
-{playlist?.tracks?.items.map((playlistt)=>{
+{playlist?.tracks?.items.map((playlistt,i)=>{
     return(
 <div>
-<Song key={playlistt.track.id} track={playlistt}  />
+<Song key={playlistt.track.id} track={playlistt} order={i} />
 </div>
         )
 })}

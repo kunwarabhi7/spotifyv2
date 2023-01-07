@@ -16,6 +16,7 @@ const login = ({providers}) => {
     </div>
 ))}
     </div>
+
   )
 }
 
