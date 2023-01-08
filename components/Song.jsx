@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Song = ({order,track}) => {
+  console.log('hey')
   return (
     <div className='flex'>
       <p>{order+1}</p>
