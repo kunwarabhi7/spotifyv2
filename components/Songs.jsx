@@ -9,10 +9,10 @@ const Songs = () => {
   return (
     <div>
         <div  className="flex text-white my-4 ">
-        <h1 className="ml-16"># Title</h1>
-        <h1 className="ml-16">ALBUM</h1>
-        <h1 className="ml-16">DATE ADDED</h1>
-        <CiClock2 className="ml-16" size={25} />
+        <h1 className="ml-16 w-96"># Title</h1>
+        <h1 className="ml-16 w-96">ALBUM</h1>
+        <h1 className=" ml-16 w-96">DATE ADDED</h1>
+        <CiClock2 className="ml-16 w-96" size={25} />
         
     </div>
         <h1 className="text-white bg-black">
