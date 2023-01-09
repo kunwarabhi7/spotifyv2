@@ -28,7 +28,7 @@ const MainBar = () => {
   console.log('your playlist is' ,playlist)
 
   return (
-    <div className='w-full h-screen'>
+    <div className='w-full h-screen overflow-y-scroll scrollbar-hide '>
 {/* Header */}
 <div className='bg-gradient-to-b from-black to-red-500   h-[418px] text-white flex justify-between p-6'>
   <div className='flex h-8 '>
