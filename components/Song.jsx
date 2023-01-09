@@ -10,6 +10,7 @@ const Song = ({order,track}) => {
       <h1 className='text-white text-xl mt-3 ml-1'>{track?.track?.name}</h1>
       <h1 className='text-xs font-thin ml-2 text-gray-400 '>{track.track.artists[0].name}</h1>
       </div>
+      <h1 className='text-xs text-gray-400'>{track.track.album.name}</h1>
     </div>
   )
 }
