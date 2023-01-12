@@ -20,7 +20,7 @@ const Songs = () => {
 {playlist?.tracks?.items.map((playlistt,i)=>{
     return(
 <div>
-<Song key={playlistt.track.id} track={playlistt} order={i} />
+<Song key={playlistt.id} track={playlistt} order={i} />
 </div>
         )
 })}
