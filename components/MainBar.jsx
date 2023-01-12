@@ -1,4 +1,5 @@
-import {useSession} from 'next-auth/react'
+import {signOut, useSession} from 'next-auth/react'
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import {AiOutlineLeft,AiOutlineRight,AiFillCaretDown} from 'react-icons/ai'
 import { useRecoilState, useRecoilValue } from 'recoil';
@@ -16,6 +17,8 @@ const MainBar = () => {
   const {data:session} = useSession();
   const playlistId = useRecoilValue(playlistIdState);
   const [playlist,setPlaylist] = useRecoilState(playlistState)
+  const router = useRouter()
+
 
   useEffect(()=>{
     spotifyApi.getPlaylist(playlistId).then((data)=>{
@@ -26,7 +29,12 @@ const MainBar = () => {
 
   },[spotifyApi,playlistId])
   console.log('your playlist is' ,playlist)
-
+  useEffect(()=>{
+    if(!session){
+      router.push('/login')
+    }
+    
+  },[])
   return (
     <div className='w-full h-screen overflow-y-scroll scrollbar-hide '>
 {/* Header */}
@@ -43,7 +51,7 @@ const MainBar = () => {
       Upgrade
       </p>
       </div>
-    <div className='flex justify-center hover:opacity-80 rounded-full  border h-8 '>
+    <div onClick={()=>signOut()} className='flex justify-center hover:opacity-80 rounded-full  border h-8 '>
       <img className='rounded-full  mr-2 cursor-pointer' src={session?.user?.image} />
       <h1 className='cursor-pointer'>{session?.user?.name}</h1>
       <AiFillCaretDown className='cursor-pointer' size={25}/>
