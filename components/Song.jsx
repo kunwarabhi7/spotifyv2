@@ -10,7 +10,7 @@ const ReadableDate = date.toLocaleDateString({
 })
 
   return (
-    <div className='flex'>
+    <div className='flex hover:bg-gray-900 cursor-pointer'>
       <p className='m-2 '>{order+1}</p>
       <img className='w-14 h-12 m-4' src={track?.track?.album?.images[0].url} />
       <div>
