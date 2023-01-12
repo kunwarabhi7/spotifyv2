@@ -1,4 +1,7 @@
 import React from 'react'
+import { useRecoilState } from 'recoil'
+import { currentsSongIdState, isPlayingState } from '../atoms/songAtom'
+import spotifyApi from '../utils/spotify'
 import time from './time'
 
 const Song = ({order,track}) => {
@@ -8,6 +11,16 @@ const ReadableDate = date.toLocaleDateString({
   month: 'long',
   day: 'numeric'
 })
+const [currentSongId,setCurrentSongId] = useRecoilState(currentsSongIdState)
+const [isSongPlaying,setIsSongPlaying] = useRecoilState(isPlayingState);
+
+const songPlaying = () => {
+  currentSongId(track.track.id);
+  isSongPlaying(true)
+  spotifyApi.play({
+    uris:[track.track.uri],
+  })
+}
 
   return (
     <div className='flex hover:bg-gray-900 cursor-pointer'>

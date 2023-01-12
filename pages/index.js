@@ -2,6 +2,7 @@ import Head from 'next/head'
 import MainBar from '../components/MainBar'
 import SideBar from '../components/SideBar'
 import { getSession, useSession } from "next-auth/react"
+import Player from '../components/Player'
 
 export default function Home() {
   const { data: session, status } = useSession()
@@ -19,7 +20,7 @@ console.log(session);
       <MainBar />
       </div>
 
-      
+      <Player />
     </div>
   )
 }
