@@ -4,7 +4,7 @@ import {VscLibrary} from 'react-icons/vsc' ;
 import {GrSpotify} from 'react-icons/gr' ;
 import {BsPlusSquareFill} from 'react-icons/bs' ;
 import {BiHeartSquare} from 'react-icons/bi' ;
-import { signOut, useSession } from "next-auth/react";
+import {  useSession } from "next-auth/react";
 import useSpotify from '../hooks/useSpotify'
 import { useRecoilState } from "recoil";
 import { playlistIdState, playlistState } from "../atoms/playlistAtom";
