@@ -16,7 +16,7 @@ const fetchSongInfo = async () =>{
             `https://api.spotify.com/v1/tracks/${currentSongId}`,
             {
                 headers:{
-                    Authorization : `Bearer ${spotifyApi.accessToken()}`,
+                    Authorization : `Bearer ${spotifyApi.getAccessToken()}`,
                 }
             }
         ).then((res)=>res.json());
