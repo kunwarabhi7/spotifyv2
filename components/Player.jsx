@@ -4,6 +4,7 @@ import { useRecoilState } from 'recoil';
 import { currentsSongIdState, isPlayingState } from '../atoms/songAtom';
 import usePlayer from '../hooks/usePlayer';
 import { useEffect, useState } from 'react';
+import {AiOutlineHeart} from 'react-icons/ai'
 
 const Player = () => {
   const [currentSongId, setCurrentSongId] = useRecoilState(currentsSongIdState)
@@ -34,11 +35,16 @@ const Player = () => {
  },[currentSongId,session,spotifyApi])
 
   return (
-    <div className='sticky bottom-0'>
+    <div className='sticky bottom-0 h-24 bg-gradient-to-b from-black to-gray-900 text-white grid grid-cols-3 text-xs md:text-base px-2 md:px-8' >
  {/* left   */}
- <div>
-  <img className='hidden md:inline h-10 w-10' src={songInfo?.album?.images?.[0]?.url} alt='song image' />
+ <div className='flex m-3'>
+  <img className='hidden md:inline h-12 w-12' src={songInfo?.album?.images?.[0]?.url} alt='song image' />
+  <div className='ml-4'>
 
+  <h1>{songInfo?.name}</h1>
+  <p>{songInfo?.artists?.[0]?.name}</p>
+  </div>
+<AiOutlineHeart />
  </div>
     </div>
   )
