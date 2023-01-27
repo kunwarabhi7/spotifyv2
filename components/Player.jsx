@@ -44,7 +44,7 @@ const Player = () => {
   <h1>{songInfo?.name}</h1>
   <p>{songInfo?.artists?.[0]?.name}</p>
   </div>
-<AiOutlineHeart />
+<AiOutlineHeart size={30} />
  </div>
     </div>
   )
