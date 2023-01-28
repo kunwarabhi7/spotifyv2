@@ -7,6 +7,9 @@ import { useEffect, useState } from 'react';
 import {AiOutlineHeart} from 'react-icons/ai'
 import {CgInpicture} from 'react-icons/cg'
 import {RxShuffle} from 'react-icons/rx'
+import {FaRegPlayCircle} from 'react-icons/fa'
+import {BiRepeat} from 'react-icons/bi'
+import {GiPreviousButton,GiNextButton,} from 'react-icons/gi'
 
 const Player = () => {
   const [currentSongId, setCurrentSongId] = useRecoilState(currentsSongIdState)
@@ -53,7 +56,13 @@ const Player = () => {
   </div>
  </div>
   {/* center */}
-
+<div className='flex p-4 ml-16 '>
+  <RxShuffle size={25} className='mr-8'/>
+  <GiPreviousButton size={25} className='mr-8'/>
+  <FaRegPlayCircle size={25} className='mr-8' />
+  <GiNextButton size={25} className='mr-8'/>
+  <BiRepeat size={25} />
+</div>
     </div>
   )
 }
