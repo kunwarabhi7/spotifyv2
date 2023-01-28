@@ -45,12 +45,14 @@ const Player = () => {
   <h1>{songInfo?.name}</h1>
   <p>{songInfo?.artists?.[0]?.name}</p>
   </div>
-  <div className='flex p-2  '>
+  <div className='flex p-4 pl-12  '>
 
-<AiOutlineHeart className='mr-2' size={25} />
-<CgInpicture size={25} />
+<AiOutlineHeart className='mr-2' size={20} />
+<CgInpicture size={20} />
   </div>
  </div>
+  {/* center */}
+
     </div>
   )
 }
