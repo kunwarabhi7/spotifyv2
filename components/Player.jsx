@@ -20,6 +20,19 @@ const Player = () => {
   const spotifyApi = useSpotify();
  const songInfo =   usePlayer();
 
+ const playPause = () =>{
+  spotifyApi.getMyCurrentPlaybackState().then((data)=>{
+    if(data.body.is_playing){
+      spotifyApi.pause();
+      setIsPlaying(false);
+    }
+    else{
+      spotifyApi.play();
+      setIsPlaying(true);
+    }
+  })
+ }
+
  const fetchCurrentSong = () => {
   if(!songInfo){
     spotifyApi.getMyCurrentPlayingTrack().then((data)=>{
