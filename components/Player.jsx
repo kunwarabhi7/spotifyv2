@@ -4,7 +4,7 @@ import { useRecoilState } from 'recoil';
 import { currentsSongIdState, isPlayingState } from '../atoms/songAtom';
 import usePlayer from '../hooks/usePlayer';
 import { useEffect, useState } from 'react';
-import {AiOutlineHeart} from 'react-icons/ai'
+import {AiOutlineHeart, AiOutlinePauseCircle} from 'react-icons/ai'
 import {CgInpicture} from 'react-icons/cg'
 import {RxShuffle} from 'react-icons/rx'
 import {FaRegPlayCircle} from 'react-icons/fa'
@@ -59,8 +59,13 @@ const Player = () => {
 <div className='flex p-4 ml-16 '>
   <RxShuffle size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
   <GiPreviousButton size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
-  <FaRegPlayCircle size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />
-  <GiNextButton size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
+  {
+    isplaying ? 
+    (<AiOutlinePauseCircle size={35} className=' -mt-2 mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />) :
+    (<FaRegPlayCircle size={35} className=' mr-8 -mt-2 hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />)  
+  }
+  
+  <GiNextButton size={25} className='mr-8  hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
   <BiRepeat size={25} className='hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />
 </div>
     </div>
