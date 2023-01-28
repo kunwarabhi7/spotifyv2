@@ -20,18 +20,7 @@ const Player = () => {
   const spotifyApi = useSpotify();
  const songInfo =   usePlayer();
 
- const playPause = () =>{
-  spotifyApi.getMyCurrentPlaybackState().then((data)=>{
-    if(data.body.is_playing){
-      spotifyApi.pause();
-      setIsPlaying(false);
-    }
-    else{
-      spotifyApi.play();
-      setIsPlaying(true);
-    }
-  })
- }
+ 
 
  const fetchCurrentSong = () => {
   if(!songInfo){
@@ -45,6 +34,19 @@ const Player = () => {
   }
  }
 
+ const playPause = () =>{
+  spotifyApi.getMyCurrentPlaybackState().then((data)=>{
+    if(data.body.is_playing){
+      spotifyApi.pause();
+      setIsPlaying(false);
+    }
+    else{
+      spotifyApi.play();
+      setIsPlaying(true);
+    }
+  })
+ }
+ 
  useEffect(()=>{
  if(spotifyApi.getAccessToken() && !currentSongId ){
   fetchCurrentSong();
@@ -70,17 +72,24 @@ const Player = () => {
  </div>
   {/* center */}
 <div className='flex justify-evenly p-4  '>
+  <div className='flex'>
+
   <RxShuffle size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
   <GiPreviousButton onClick={()=> spotifyApi.skipToPrevious()} size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
   {
     isplaying ? 
-    (<AiOutlinePauseCircle size={35} className=' -mt-2 mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />) :
-    (<FaRegPlayCircle size={35} className=' mr-8 -mt-2 hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />)  
+    (<AiOutlinePauseCircle onClick={playPause} size={35} className=' -mt-2 mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />) :
+    (<FaRegPlayCircle onClick={playPause} size={35} className=' mr-8 -mt-2 hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />)  
   }
   
   <GiNextButton onClick={()=>spotifyApi.skipToNext()} size={25} className='mr-8  hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
   <BiRepeat size={25} className='hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />
+  </div>
+  <input type="range" className='mt-8 w-96 -ml-96'/>
+
 </div>
+ {/* Right */}
+
     </div>
   )
 }
