@@ -5,6 +5,7 @@ import { currentsSongIdState, isPlayingState } from '../atoms/songAtom';
 import usePlayer from '../hooks/usePlayer';
 import { useEffect, useState } from 'react';
 import {AiOutlineHeart} from 'react-icons/ai'
+import {CgInpicture} from 'react-icons/cg'
 
 const Player = () => {
   const [currentSongId, setCurrentSongId] = useRecoilState(currentsSongIdState)
@@ -44,7 +45,11 @@ const Player = () => {
   <h1>{songInfo?.name}</h1>
   <p>{songInfo?.artists?.[0]?.name}</p>
   </div>
-<AiOutlineHeart size={30} />
+  <div className='flex p-2  '>
+
+<AiOutlineHeart className='mr-2' size={25} />
+<CgInpicture size={25} />
+  </div>
  </div>
     </div>
   )
