@@ -56,16 +56,16 @@ const Player = () => {
   </div>
  </div>
   {/* center */}
-<div className='flex p-4 ml-16 '>
+<div className='flex justify-evenly p-4  '>
   <RxShuffle size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
-  <GiPreviousButton size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
+  <GiPreviousButton onClick={()=> spotifyApi.skipToPrevious()} size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
   {
     isplaying ? 
     (<AiOutlinePauseCircle size={35} className=' -mt-2 mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />) :
     (<FaRegPlayCircle size={35} className=' mr-8 -mt-2 hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />)  
   }
   
-  <GiNextButton size={25} className='mr-8  hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
+  <GiNextButton onClick={()=>spotifyApi.skipToNext()} size={25} className='mr-8  hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
   <BiRepeat size={25} className='hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />
 </div>
     </div>
