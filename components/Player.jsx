@@ -6,6 +6,7 @@ import usePlayer from '../hooks/usePlayer';
 import { useEffect, useState } from 'react';
 import {AiOutlineHeart} from 'react-icons/ai'
 import {CgInpicture} from 'react-icons/cg'
+import {RxShuffle} from 'react-icons/rx'
 
 const Player = () => {
   const [currentSongId, setCurrentSongId] = useRecoilState(currentsSongIdState)
