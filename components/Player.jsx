@@ -89,6 +89,9 @@ const Player = () => {
 
 </div>
  {/* Right */}
+ <div>
+  
+ </div>
 
     </div>
   )
