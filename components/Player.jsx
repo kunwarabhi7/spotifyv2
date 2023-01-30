@@ -90,7 +90,7 @@ const Player = () => {
 </div>
  {/* Right */}
  <div>
-  
+  l
  </div>
 
     </div>
