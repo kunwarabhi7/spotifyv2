@@ -91,9 +91,9 @@ const Player = () => {
 </div>
  {/* Right */}
  <div className='flex justify-end items-center'>
-  <BsVolumeDownFill size={20} />
-  <input value={volume} onChange={e=>setVolume(Number(e.target.value))} className='w-14 md:w-28' type="range" min={0} max={100} />
-  <BsVolumeUpFill size={20} />
+  <BsVolumeDownFill onClick={()=>volume>0 && setVolume(volume-10)} size={20} />
+  <input value={volume} className='bg-green-600' onChange={e=>setVolume(Number(e.target.value))} className='w-14 md:w-28' type="range" min={0} max={100} />
+  <BsVolumeUpFill onClick={()=>volume<100 && setVolume(volume+10)} size={20} />
  </div>
 
     </div>
