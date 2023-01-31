@@ -92,7 +92,7 @@ const Player = () => {
  {/* Right */}
  <div className='flex justify-end items-center'>
   <BsVolumeDownFill size={20} />
-  <input type="range" max={100} min={0}/>
+  <input className='w-14 md:w-28' type="range" max={100} min={0}/>
   <BsVolumeUpFill size={20} />
  </div>
 
