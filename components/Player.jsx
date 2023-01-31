@@ -15,7 +15,7 @@ import {GiPreviousButton,GiNextButton,} from 'react-icons/gi'
 const Player = () => {
   const [currentSongId, setCurrentSongId] = useRecoilState(currentsSongIdState)
   const [isplaying,setIsPlaying] = useRecoilState(isPlayingState)
-  const [volume,setVolume] = useState(50)
+  const [volume,setVolume] = useState(100)
 
   const {data : session,status} = useSession();
   const spotifyApi = useSpotify();
@@ -92,7 +92,7 @@ const Player = () => {
  {/* Right */}
  <div className='flex justify-end items-center'>
   <BsVolumeDownFill size={20} />
-  <input className='w-14 md:w-28' type="range" max={100} min={0}/>
+  <input value={volume} onChange={e=>setVolume(Number(e.target.value))} className='w-14 md:w-28' type="range" min={0} max={100} />
   <BsVolumeUpFill size={20} />
  </div>
 
