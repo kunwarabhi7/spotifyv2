@@ -9,6 +9,7 @@ import {CgInpicture} from 'react-icons/cg'
 import {RxShuffle} from 'react-icons/rx'
 import {FaRegPlayCircle} from 'react-icons/fa'
 import {BiRepeat} from 'react-icons/bi'
+import {BsVolumeUpFill,BsVolumeDownFill} from 'react-icons/bs'
 import {GiPreviousButton,GiNextButton,} from 'react-icons/gi'
 
 const Player = () => {
@@ -71,7 +72,7 @@ const Player = () => {
   </div>
  </div>
   {/* center */}
-<div className='flex justify-evenly p-4  '>
+<div className='flex justify-center p-4  '>
   <div className='flex'>
 
   <RxShuffle size={25} className='mr-8 hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
@@ -85,12 +86,14 @@ const Player = () => {
   <GiNextButton onClick={()=>spotifyApi.skipToNext()} size={25} className='mr-8  hover:scale-125 cursor-pointer transition transform duration-100 ease-out'/>
   <BiRepeat size={25} className='hover:scale-125 cursor-pointer transition transform duration-100 ease-out' />
   </div>
-  <input type="range" className='mt-8 w-96 -ml-96'/>
+  <input type="range" className='mt-8 w-96 -ml-80'/>
 
 </div>
  {/* Right */}
- <div>
-  l
+ <div className='flex justify-end items-center'>
+  <BsVolumeDownFill size={20} />
+  <input type="range" max={100} min={0}/>
+  <BsVolumeUpFill size={20} />
  </div>
 
     </div>
