@@ -21,7 +21,7 @@ const Player = () => {
   const spotifyApi = useSpotify();
  const songInfo =   usePlayer();
 
- 
+ console.log('hey')
 
  const fetchCurrentSong = () => {
   if(!songInfo){
